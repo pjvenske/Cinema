@@ -8,6 +8,9 @@ import Store from './pages/Store.js';
 function App() {
   let Component
   switch (window.location.pathname) {
+    case "/":
+      Component = Home
+      break
     case "/home":
       Component = Home
       break

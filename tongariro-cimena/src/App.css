@@ -56,13 +56,158 @@ body {
   color: white;
 }
 
-p {
-  font-size: 20px;
-  margin: 20px;
+.form {
+  background-color: #3f4554;
+  min-height: 100px;
+  justify-content: space-between;
+  align-items: stretch;
+  text-align: top;
+  color: white;
+  margin: 0;
+
 }
 
-h1 {
-  font-size: 30px;
+.form ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.form li {
+  margin-right: 90px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.form input, textarea {
   margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #3f4554;
+}
+
+.text-box img {
+  float: right;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.text-box {
+  padding: 20px;
+}
+
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+}
+
+.movie {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #3f4554;
+}
+
+.movie-imgFile {
+  width: 200px;
+  height: 250px;
+  margin: 10px;
+  border-radius: 10px;
+  background-size: cover; /* Cover the entire container with the background image */
+  background-position: center; /* Center the background image */
+  overflow: hidden; /* Hide any overflow beyond the container */
+}
+
+.banner {
+  background-color: #0e1014;
+  min-height: 60px;
+  align-items: center;
   text-align: center;
+  color: white;
+  margin: 0;
+}
+
+.banner img {
+  width: 100%;
+  max-height: 55%;
+  size: 50%;
+  margin: 0;
+  padding: 0;
+  border-radius: 10px;
+}
+
+.time-selection {
+  background-color: #3f4554;
+  min-height: 100px;
+  justify-content: space-between;
+  align-items: stretch;
+  text-align: top;
+  color: white;
+  margin: 0;
+}
+
+.time-selection button {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #3f4554;
+}
+
+.time-selection button:hover {
+  background-color: #7a7f88;
+}
+
+.time-selection button::after {
+  background-color: #808690;
+}
+
+.booking-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+}
+
+.ticket-selection {
+  background-color: #3f4554;
+  min-height: 100px;
+  justify-content: space-between;
+  align-items: stretch;
+  text-align: top;
+  color: white;
+  margin: 0;
+}
+
+.ticket-selection li {
+  display: flex;
+  margin-right: 90px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.ticket-selection button {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #9599a5;
+}
+
+.seat-selection {
+  background-color: #3f4554;
+  min-height: 100px;
+  justify-content: space-between;
+  align-items: stretch;
+  text-align: top;
+  color: white;
+  margin: 0;
 }

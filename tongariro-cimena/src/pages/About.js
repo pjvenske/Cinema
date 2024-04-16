@@ -1,34 +1,19 @@
-
+import '../App.css';
 
 export default function About() {
     return (
         <div className="aboutUs">
-            <h1>About Us</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur 
-                adipiscing elit, sed do eiusmod tempor
-                 incididunt ut labore et dolore magna aliqua. 
-                 Amet risus nullam eget felis eget nunc lobortis
-                  mattis. Elementum sagittis vitae et leo duis.
-                   Tincidunt praesent semper feugiat nibh. Eget 
-                   nunc lobortis mattis aliquam. Sapien et 
-                   ligula ullamcorper malesuada proin libero
-                    nunc consequat. Quis risus sed vulputate 
-                    odio ut. Pulvinar sapien et ligula 
-                    ullamcorper. Vitae suscipit tellus mauris a 
-                    diam maecenas sed enim ut. Luctus accumsan 
-                    tortor posuere ac. In fermentum et
-                     sollicitudin ac orci. Eget mauris pharetra
-                      et ultrices. Eu non diam phasellus
-                       vestibulum lorem. Arcu cursus euismod 
-                       quis viverra. Sit amet nisl suscipit 
-                       adipiscing bibendum est ultricies. Nisi 
-                       lacus sed viverra tellus in hac habitasse.
-                        Consectetur libero id faucibus nisl 
-                        tincidunt eget nullam. Eu tincidunt
-                         tortor aliquam nulla facilisi cras
-                          fermentum odio eu. Varius duis at 
-                          consectetur lorem donec. Neque aliquam
-                           vestibulum morbi blandit.</p>
+            <div className="text-box">
+                <img src="/assets/image1.jpg"></img>
+                <h1>About Our Cinema</h1>
+                <p>Welcome to our cinema! We're dedicated to providing you with an exceptional movie-watching experience. Whether you're a casual moviegoer or a passionate cinephile, we have something for everyone.</p>
+                <h2>Our Mission</h2>
+                <p>At our cinema, our mission is simple: to entertain, inspire, and bring people together through the magic of film. We strive to create a welcoming and inclusive environment where movie lovers of all ages can come together to enjoy the latest blockbusters, timeless classics, and everything in between.</p>
+                <h2>Our Facilities</h2>
+                <p>Our cinema boasts state-of-the-art facilities designed to enhance your viewing pleasure. From comfortable seating and crystal-clear digital projection to immersive surround sound, we spare no effort in ensuring that your cinematic experience is nothing short of spectacular.</p>
+                <h2>Special Events</h2>
+                <p>In addition to our regular screenings, we also host special events such as premiere nights, themed movie marathons, and filmmaker Q&A sessions. Keep an eye on our schedule for upcoming events that you won't want to miss!</p>
+            </div>
         </div>
     );
 }
