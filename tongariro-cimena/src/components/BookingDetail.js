@@ -2,6 +2,21 @@
 import React , {useState} from 'react';
 
 export default function BookingDetail() {
+
+    const [selectedDate, setSelectedDate] = useState(new Date());
+
+    const handleDateClick = (date) => {
+        setSelectedDate(date);
+    };
+
+    // Generate an array of dates for the next week
+    const dates = Array.from({length: 7}, (_, i) => {
+        const date = new Date();
+        date.setDate(date.getDate() + i);
+        return date;
+    });
+
+
     const [adults, setAdults] = useState(1);
     const [children, setChildren] = useState(0);
     const [seniors, setSeniors] = useState(0);
@@ -39,6 +54,12 @@ export default function BookingDetail() {
             }
         }
     };
+    const handleConfirmClick = () => {
+        const seats = selectedSeats.join(', ');
+        const date = selectedDate.toDateString();
+        const time = sessionTime;
+        alert(`You have booked seats ${seats} for the session on ${date} at ${time}.`);
+    };
 
       return (
             <div className="booking">
@@ -48,6 +69,15 @@ export default function BookingDetail() {
                 </div>
                 <div className="time-selection">
                     <h2>Date: </h2>
+                    {dates.map((date, index) => (
+                    <button 
+                        key={index} 
+                        className={selectedDate.toDateString() === date.toDateString() ? 'selected' : ''} 
+                        onClick={() => handleDateClick(date)}
+                    >
+                        {date.toDateString()}
+                    </button>
+                ))}
                     <h3>Session Time: </h3>
                     <button className={sessionTime === '2:30' ? 'selected' : ''} onClick={() => changeSessionTime('2:30')}>2:30</button>
                     <button className={sessionTime === '4:30' ? 'selected' : ''} onClick={() => changeSessionTime('4:30')}>4:30</button>
@@ -136,13 +166,14 @@ export default function BookingDetail() {
                         <li>Total Price: ${adults*20 + children*10 + seniors*10 + students*15}</li>
                     </ul>
                     <h2>Selected Seats:</h2>
-                    <ul>
+                    <ul className="seats-display">
                         {selectedSeats.map((seat, index) => (
                             <li key={index}>{seat}</li>
                         ))}
                     </ul>
                     <h2>Session Time: </h2>
-                    <p>{sessionTime}</p>
+                    <p>{selectedDate.toDateString()} at {sessionTime}</p>
+                    <button onClick={handleConfirmClick}>Confirm Booking</button>
                 </div>
             </div>
         )

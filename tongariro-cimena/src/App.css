@@ -163,7 +163,6 @@ body {
 
 .time-selection button {
   width: 80px;
-  height: 40px;
   font-size: 20px;
   text-align: center;
   margin: 10px;
@@ -238,4 +237,19 @@ body {
 .selected {
   background-color: #4CAF50 !important; /* Green */
   color: white !important;
+}
+
+.booking-summary {
+  align-items: stretch;
+}
+
+.booking-summary li {
+  display: flex;
+  margin-right: 90px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.seats-display {
+  align-items: stretch;
 }
