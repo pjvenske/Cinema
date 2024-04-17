@@ -124,8 +124,18 @@ body {
   overflow: hidden; /* Hide any overflow beyond the container */
 }
 
+.booking {
+  background-color: #1d2026;
+  min-height: 100px;
+  justify-content: space-between;
+  align-items: stretch;
+  text-align: top;
+  color: white;
+  margin: 25px;
+
+}
+
 .banner {
-  background-color: #0e1014;
   min-height: 60px;
   align-items: center;
   text-align: center;
@@ -143,47 +153,46 @@ body {
 }
 
 .time-selection {
-  background-color: #3f4554;
   min-height: 100px;
   justify-content: space-between;
   align-items: stretch;
-  text-align: top;
+  text-align: center;
   color: white;
   margin: 0;
 }
 
 .time-selection button {
+  width: 80px;
+  height: 40px;
+  font-size: 20px;
+  text-align: center;
   margin: 10px;
   padding: 10px;
-  border-radius: 5px;
-  background-color: #3f4554;
+  border-radius: 15px;
+  background-color: #898d99;
+  color: white;
 }
 
-.time-selection button:hover {
-  background-color: #7a7f88;
-}
 
-.time-selection button::after {
-  background-color: #808690;
-}
+
 
 .booking-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 0;
+  margin: 20px;
   padding: 0;
   list-style-type: none;
+  background-color: #1d2026;
 
 }
 
 .ticket-selection {
-  background-color: #3f4554;
   min-height: 100px;
   justify-content: space-between;
   align-items: stretch;
-  text-align: top;
+  text-align: left;
   color: white;
   margin: 0;
 }
@@ -200,14 +209,33 @@ body {
   padding: 10px;
   border-radius: 20px;
   background-color: #9599a5;
+  color: white;
 }
 
 .seat-selection {
-  background-color: #3f4554;
   min-height: 100px;
   justify-content: space-between;
-  align-items: stretch;
+  align-items: right;
   text-align: top;
   color: white;
   margin: 0;
+}
+
+.seat-selection img {
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.seat-selection li {
+  display: flex;
+  margin-right: 90px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.selected {
+  background-color: #4CAF50 !important; /* Green */
+  color: white !important;
 }
