@@ -58,26 +58,110 @@ body {
   color: white;
 }
 
-/* Contact styl4es */
-
-.form {
-  background-color: #3f4554;
-  min-height: 100px;
-  justify-content: space-between;
-  align-items: stretch;
-  text-align: top;
-  color: white;
+/* Store styles */
+.store {
+  margin: 20px;
+}
+.partner img {
+  width:300px;
+  size: 50%;
   margin: 0;
+  padding: 0;
+  border-radius: 10px;
+}
+
+.products img, .cart img{
+  width: 200px;
+}
+
+.products ul, .cart ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.products li, .cart li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #3f4554;
+}
+
+.add-to-cart, .cart button, .checkout button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #373a42;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover, .cart button:hover {
+  background-color: #3f4554;
+}
+
+.checkout {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: normal;
+}
+
+.checkout input {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #3f4554;
+}
+
+/* Contact styl4es */
+.contact-page {
+  padding: 10px;
+}
+
+.contact-page h1 {
+  text-align: center;
 
 }
 
-.form ul {
+.contact {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: normal;
+}
+
+.form {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+
+}
+
+.contact ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-.form li {
+.contact li {
   margin-right: 90px;
   text-decoration: none;
   font-size: 20px;
@@ -88,6 +172,23 @@ body {
   padding: 10px;
   border-radius: 5px;
   background-color: #3f4554;
+}
+
+.info {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}
+
+button {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #4CAF50;
+  color: white;
 }
 
 /* about styles */
