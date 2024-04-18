@@ -5,6 +5,7 @@ export default function BookingDetail ({selectedMovie}){
 
     const [selectedDate, setSelectedDate] = useState(new Date());
 
+    // Function to handle the date selection
     const handleDateClick = (date) => {
         setSelectedDate(date);
     };
@@ -16,12 +17,13 @@ export default function BookingDetail ({selectedMovie}){
         return date;
     });
 
-
+    // State to store the number of tickets for each category
     const [adults, setAdults] = useState(1);
     const [children, setChildren] = useState(0);
     const [seniors, setSeniors] = useState(0);
     const [students, setStudents] = useState(0);
 
+    // State to store the session time
     const [sessionTime, setSessionTime] = useState(null);
     const changeSessionTime = (newTime) => {
         setSessionTime(newTime);
@@ -29,8 +31,9 @@ export default function BookingDetail ({selectedMovie}){
 
     const [selectedSeats, setSelectedSeats] = useState([]);
 
+    // Function to handle the seat selection
     const handleSeatClick = (seat, e) => {
-
+        // Check if the seat is taken
         if (e.target.src.includes("/assets/seatTake.png")) {
             return;
         }
@@ -54,6 +57,8 @@ export default function BookingDetail ({selectedMovie}){
             }
         }
     };
+
+    // Function to handle the confirm booking button click
     const handleConfirmClick = () => {
         const seats = selectedSeats.join(', ');
         const date = selectedDate.toDateString();

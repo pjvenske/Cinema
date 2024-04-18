@@ -2,6 +2,8 @@ import '../App.css';
 
 export default function About() {
     return (
+
+        /* this is the about us page */
         <div className="aboutUs">
             <div className="text-box">
                 <img src="/assets/image1.jpg"></img>

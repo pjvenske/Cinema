@@ -3,9 +3,11 @@ import BookingDetail from '../components/BookingDetail';
 import { useState } from 'react';
 
 export default function Home() {
-
+    /* this is the home page */
+    
     const [bookingOpen, setBooking] = useState(false);
 
+    /* this function toggles the booking detail component */
     const toggleBooking = (movie) => {
         setSelectedMovie(movie);
         setBooking(!bookingOpen);
@@ -16,7 +18,7 @@ export default function Home() {
     const [selectedMovie, setSelectedMovie] = useState({})
 
 
-
+    /* this is the data for the movies */
     let data = [
         {
             title: "The Godfather",

@@ -5,9 +5,10 @@ import About from './pages/About.js';
 import Contact from './pages/Contact.js';
 import Store from './pages/Store.js';
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
+
+  /* this is a switch statement that will determine which component to render based on the current URL path */
   let Component
   switch (window.location.pathname) {
     case "/":

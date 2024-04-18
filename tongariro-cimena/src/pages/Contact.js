@@ -1,7 +1,8 @@
 import '../App.css';
 
 export default function Contact() {
-    
+
+    /* this const makes the button send an alert that the form is submited */    
     const handleSubmit = (e) => {
         e.preventDefault();
         const name = e.target.elements.name.value;

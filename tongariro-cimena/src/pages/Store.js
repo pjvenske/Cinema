@@ -3,10 +3,12 @@ import React, { useState } from 'react';
 export default function Store() {
     const [cart, setCart] = useState([]);
 
+    // Add a product to the cart
     const addToCart = (product) => {
         setCart(currentCart => [...currentCart, product]);
     };
 
+    // Remove a product from the cart
     const removeFromCart = (product) => {
         setCart(currentCart => currentCart.filter(item => item.name !== product.name));
     };
