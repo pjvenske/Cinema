@@ -1,7 +1,28 @@
 
 import React , {useState} from 'react';
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
-export default function BookingDetail() {
+export default function BookingDetail ({selectedMovie}){
+
+   const form = useRef()
+
+   const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_um4234v', 'template_m858oil', form.current, {
+        publicKey: 'H7QyYOJ3voM6_zpXj',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+  };
 
     const [selectedDate, setSelectedDate] = useState(new Date());
 
@@ -54,18 +75,18 @@ export default function BookingDetail() {
             }
         }
     };
-    const handleConfirmClick = () => {
-        const seats = selectedSeats.join(', ');
-        const date = selectedDate.toDateString();
-        const time = sessionTime;
-        alert(`You have booked seats ${seats} for the session on ${date} at ${time}.`);
-    };
+    // const handleConfirmClick = () => {
+    //     const seats = selectedSeats.join(', ');
+    //     const date = selectedDate.toDateString();
+    //     const time = sessionTime;
+    //     alert(`You have booked seats ${seats} for the session on ${date} at ${time}.`);
+    // };
 
       return (
             <div className="booking">
                 <div className="banner">
-                    <img src="/assets/godfaBanner.jpg" alt="The Godfather" />
-                    <h1>The Godfather</h1>
+                    <img src={selectedMovie.banner} />
+                    <h1>{selectedMovie.title}</h1>
                 </div>
                 <div className="time-selection">
                     <h2>Date: </h2>
@@ -75,7 +96,7 @@ export default function BookingDetail() {
                         className={selectedDate.toDateString() === date.toDateString() ? 'selected' : ''} 
                         onClick={() => handleDateClick(date)}
                     >
-                        {date.toDateString()}
+                        {date.toLocaleDateString(undefined, { weekday: 'short', month: 'long', day: 'numeric' })}
                     </button>
                 ))}
                     <h3>Session Time: </h3>
@@ -156,24 +177,52 @@ export default function BookingDetail() {
                         </div>
                     </div>
                 </div>
-                <div className="booking-summary">
-                    <h2>Booking Summary</h2>
-                    <ul>
-                        <li>Adults: {adults}</li>
-                        <li>Children: {children}</li>
-                        <li>Seniors: {seniors}</li>
-                        <li>Students: {students}</li>
-                        <li>Total Price: ${adults*20 + children*10 + seniors*10 + students*15}</li>
-                    </ul>
-                    <h2>Selected Seats:</h2>
-                    <ul className="seats-display">
-                        {selectedSeats.map((seat, index) => (
-                            <li key={index}>{seat}</li>
-                        ))}
-                    </ul>
-                    <h2>Session Time: </h2>
-                    <p>{selectedDate.toDateString()} at {sessionTime}</p>
-                    <button onClick={handleConfirmClick}>Confirm Booking</button>
+                <div className="finalise" ref={form} onSubmit={sendEmail}>
+                    <div className="booking-summary">
+                        <h2>Booking Summary</h2>
+                        <ul>
+                            <li>Adults: {adults}</li>
+                            <li>Children: {children}</li>
+                            <li>Seniors: {seniors}</li>
+                            <li>Students: {students}</li>
+                            <li>Total Price: ${adults*20 + children*10 + seniors*10 + students*15}</li>
+                        </ul>
+                        <h2>Selected Seats:</h2>
+                        <ul className="seats-display">
+                            {selectedSeats.map((seat, index) => (
+                                <li key={index}>{seat}</li>
+                            ))}
+                        </ul>
+                        <h2>Session Time: </h2>
+                        <p>{selectedDate.toDateString()} at {sessionTime}</p>
+                    </div>
+                    <div className="payment">
+                        <form>
+                            <ul>
+                                <li>
+                                    <label for="name">Name:</label>
+                                    <input type="text" id="name" name="name"></input>
+                                </li>
+                                <li>
+                                    <label for="email">Email:</label>
+                                    <input type="email" id="email" name="email"></input>
+                                </li>
+                                <li>
+                                    <label for="card">Card Number:</label>
+                                    <input type="text" id="card" name="card"></input>
+                                </li>
+                                <li>
+                                    <label for="expiry">Expiry Date:</label>
+                                    <input type="text" id="expiry" name="expiry"></input>
+                                </li>
+                                <li>
+                                    <label for="cvv">CVV:</label>
+                                    <input type="text" id="cvv" name="cvv"></input>
+                                </li>
+                            </ul>
+                        </form>
+                        <button onClick={sendEmail}>Confirm Booking</button>
+                    </div>
                 </div>
             </div>
         )

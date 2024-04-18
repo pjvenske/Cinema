@@ -5,6 +5,8 @@ import About from './pages/About.js';
 import Contact from './pages/Contact.js';
 import Store from './pages/Store.js';
 
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 function App() {
   let Component
   switch (window.location.pathname) {
