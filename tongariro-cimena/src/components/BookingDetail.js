@@ -1,28 +1,7 @@
 
 import React , {useState} from 'react';
-import { useRef } from 'react';
-import emailjs from '@emailjs/browser';
 
 export default function BookingDetail ({selectedMovie}){
-
-   const form = useRef()
-
-   const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm('service_um4234v', 'template_m858oil', form.current, {
-        publicKey: 'H7QyYOJ3voM6_zpXj',
-      })
-      .then(
-        () => {
-          console.log('SUCCESS!');
-        },
-        (error) => {
-          console.log('FAILED...', error.text);
-        },
-      );
-  };
 
     const [selectedDate, setSelectedDate] = useState(new Date());
 
@@ -75,12 +54,12 @@ export default function BookingDetail ({selectedMovie}){
             }
         }
     };
-    // const handleConfirmClick = () => {
-    //     const seats = selectedSeats.join(', ');
-    //     const date = selectedDate.toDateString();
-    //     const time = sessionTime;
-    //     alert(`You have booked seats ${seats} for the session on ${date} at ${time}.`);
-    // };
+    const handleConfirmClick = () => {
+        const seats = selectedSeats.join(', ');
+        const date = selectedDate.toDateString();
+        const time = sessionTime;
+        alert(`You have booked seats ${seats} for the session on ${date} at ${time}.`);
+    };
 
       return (
             <div className="booking">
@@ -177,7 +156,7 @@ export default function BookingDetail ({selectedMovie}){
                         </div>
                     </div>
                 </div>
-                <div className="finalise" ref={form} onSubmit={sendEmail}>
+                <div className="finalise">
                     <div className="booking-summary">
                         <h2>Booking Summary</h2>
                         <ul>
@@ -221,7 +200,7 @@ export default function BookingDetail ({selectedMovie}){
                                 </li>
                             </ul>
                         </form>
-                        <button onClick={sendEmail}>Confirm Booking</button>
+                        <button onClick={handleConfirmClick}>Confirm Booking</button>
                     </div>
                 </div>
             </div>
